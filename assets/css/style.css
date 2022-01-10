@@ -1,0 +1,48 @@
+/* reset css */
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+/* canvas box */
+
+canvas {
+    border: 1px solid #000;
+    background-color: #000;
+}
+
+.record,
+.result {
+    display: inline-block;
+    position: fixed;
+    top: 10px;
+    left: 10px;
+    font-size: 20px;
+    font-weight: 600;
+    color: yellow;
+}
+
+.result {
+    top: 40px;
+}
+
+button{
+    border: none;
+    min-width: 100px;
+    min-height: 30px;
+    padding: 8px;
+    font-size: 16px;
+    font-weight: 500;
+    background-color: green;
+    color: yellow;
+}
+
+button:hover {
+    opacity: .7;
+}
