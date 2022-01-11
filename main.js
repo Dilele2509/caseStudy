@@ -7,6 +7,7 @@ class snakeGame {
         this.score = 0;
         this.record = 0;
         this.check = true;
+        this.timeOut;
         this.init();
         this.loop();
     }
@@ -23,6 +24,14 @@ class snakeGame {
         this.maxResult = document.createElement('div');
         this.maxResult.classList.add("record");
 
+        this.btnReset = document.createElement("button");
+        this.btnReset.innerText = 'Play Again';
+        this.btnReset.addEventListener('click', ()=>{
+            this.btnReset.style.display = 'none';
+            this.reset();
+        })
+        document.body.appendChild(this.btnReset);
+
         // this.startBtn = document.createElement('button');
         // this.startBtn.innerText = 'START';
         // this.stopBtn = document.createElement('button');
@@ -32,6 +41,7 @@ class snakeGame {
         document.body.appendChild(this.canvas);
         document.body.appendChild(this.maxResult);
         document.body.appendChild(this.result);
+    
         // document.body.appendChild(this.startBtn);
         // document.body.appendChild(this.stopBtn);
 
@@ -39,11 +49,15 @@ class snakeGame {
         this.food = new food(this);
 
     }
+    
+    stop() {
+        clearInterval(this.timeOut)
+    }
 
     loop(){
         this.update();
         this.draw();
-        setTimeout(()=>this.loop(), 60)
+        this.timeOut = setTimeout(()=>this.loop(), 60)
     }
 
     update(){
@@ -66,8 +80,10 @@ class snakeGame {
         if(!this.snake.endGame()){
             this.snake.draw();
         } else {
-            // this.snake.drawMessage();
-            setTimeout(this.reset(), 5000)
+            // this.reset();
+            this.btnReset.style.display= "block";
+            this.snake.drawMessage();
+            this.stop()         
         }
         this.food.draw();
     }

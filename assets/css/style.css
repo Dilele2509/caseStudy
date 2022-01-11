@@ -33,6 +33,10 @@ canvas {
 }
 
 button{
+    display: none;
+    position: fixed;
+    top: 330px;
+    left: 250px;
     border: none;
     min-width: 100px;
     min-height: 30px;
