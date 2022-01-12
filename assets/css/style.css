@@ -9,7 +9,6 @@
 html {
     font-family: Arial, Helvetica, sans-serif;
 }
-
 /* canvas box */
 
 canvas {
@@ -32,21 +31,59 @@ canvas {
     top: 40px;
 }
 
-button{
-    display: none;
-    position: fixed;
-    top: 330px;
-    left: 250px;
+button {
     border: none;
-    min-width: 100px;
-    min-height: 30px;
     padding: 8px;
     font-size: 16px;
-    font-weight: 500;
-    background-color: green;
-    color: yellow;
+    color: #fff;
+    background-color: transparent;
 }
 
 button:hover {
     opacity: .7;
+    cursor: pointer;
+}
+
+.newGameBtn,
+.btnReset {
+    display: none;
+    position: fixed;
+    top: 330px;
+    left: 250px;
+    min-width: 100px;
+    min-height: 30px;
+    font-weight: 500;
+    background-color: green;
+    color: yellow;
+    animation: ease-in growUp .4s;
+}
+
+.stopBtn {
+    position: fixed;
+    top: 0px;
+    left: 555px;
+    font-size: 28px;
+    min-width: 48px;
+}
+
+.playBtn {
+    display: none;
+    position: fixed;
+    top: 259px;
+    left: 266px;
+    min-width: 48px;
+    font-size: 48px;
+    animation: ease-in growUp .4s;
+
+}
+
+@keyframes growUp {
+    from{
+        opacity: 0;
+        transform: translate(0);
+    }
+    to{
+        opacity: 1;
+        transform: translate(1);
+    }
 }

@@ -50,7 +50,7 @@ class snake {
         // Show message when losing
         if(this.endGame()){
             this.snakeGame.ctx.fillStyle ='yellow';
-            this.snakeGame.ctx.font = '40px Arial'
+            this.snakeGame.ctx.font = '40px Arial';
             this.snakeGame.ctx.fillText('You Lose!!!', 200, 300);
         }
     }
