@@ -6,6 +6,7 @@ class snake {
         this.grid = 20;
         this.dx = this.grid;
         this.dy = 0;
+        this.color = 'green';
         this.cell = [];
         this.maxCell = 1;
     }
@@ -41,7 +42,7 @@ class snake {
     draw(){
         // draw snake
         for(let i = 0; i < this.cell.length; i++){
-            this.snakeGame.ctx.fillStyle = 'green';
+            this.snakeGame.ctx.fillStyle = this.color;
             this.snakeGame.ctx.fillRect(this.cell[i].x,this.cell[i].y,this.grid,this.grid);
         }
     }

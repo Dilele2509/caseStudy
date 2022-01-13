@@ -26,9 +26,9 @@ class snakeGame {
         this.maxResult = document.createElement('div');
         this.maxResult.classList.add("record");
         
-        document.body.appendChild(this.canvas);
-        document.body.appendChild(this.maxResult);
-        document.body.appendChild(this.result);
+        document.body.firstChild.nextSibling.appendChild(this.canvas);
+        document.body.firstChild.nextSibling.appendChild(this.maxResult);
+        document.body.firstChild.nextSibling.appendChild(this.result);
 
 
         // create reset button
@@ -39,7 +39,7 @@ class snakeGame {
             this.btnReset.style.display = 'none';
             this.reset();
         })
-        document.body.appendChild(this.btnReset);
+        document.body.firstChild.nextSibling.appendChild(this.btnReset);
 
         // create stop button
         this.stopBtn = document.createElement('button');
@@ -50,7 +50,7 @@ class snakeGame {
             this.newGameBtn.style.display = 'block';
             this.stop();
         })
-        document.body.appendChild(this.stopBtn);
+        document.body.firstChild.nextSibling.appendChild(this.stopBtn);
 
         // create play button
         this.playBtn = document.createElement('button');
@@ -61,7 +61,7 @@ class snakeGame {
             this.playBtn.style.display = 'none';
             this.newGameBtn.style.display = 'none';
         })
-        document.body.appendChild(this.playBtn);
+        document.body.firstChild.nextSibling.appendChild(this.playBtn);
 
         // create new game button
         this.newGameBtn = document.createElement('button');
@@ -74,7 +74,7 @@ class snakeGame {
             this.record = 0;
             this.reset();
         })
-        document.body.appendChild(this.newGameBtn);
+        document.body.firstChild.nextSibling.appendChild(this.newGameBtn);
     
 
         this.snake = new snake(this);
