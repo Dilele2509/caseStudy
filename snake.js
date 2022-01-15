@@ -8,7 +8,7 @@ class snake {
         this.dy = 0;
         this.color = 'green';
         this.cell = [];
-        this.maxCell = 1;
+        this.maxCell = 2;
     }
 
     update(){
