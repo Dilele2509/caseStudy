@@ -1,3 +1,7 @@
+let divGame = document.querySelector('.game');
+let divSetting = document.querySelector('.setting');
+let setSnakeColor = document.querySelector('.snakeColor');
+
 class snakeGame {
 
     constructor(){
@@ -26,9 +30,9 @@ class snakeGame {
         this.maxResult = document.createElement('div');
         this.maxResult.classList.add("record");
         
-        document.body.firstChild.nextSibling.appendChild(this.canvas);
-        document.body.firstChild.nextSibling.appendChild(this.maxResult);
-        document.body.firstChild.nextSibling.appendChild(this.result);
+        divGame.appendChild(this.canvas);
+        divSetting.appendChild(this.maxResult);
+        divSetting.appendChild(this.result);
 
 
         // create reset button
@@ -39,7 +43,7 @@ class snakeGame {
             this.btnReset.style.display = 'none';
             this.reset();
         })
-        document.body.firstChild.nextSibling.appendChild(this.btnReset);
+        divSetting.appendChild(this.btnReset);
 
         // create stop button
         this.stopBtn = document.createElement('button');
@@ -50,7 +54,7 @@ class snakeGame {
             this.newGameBtn.style.display = 'block';
             this.stop();
         })
-        document.body.firstChild.nextSibling.appendChild(this.stopBtn);
+        divSetting.appendChild(this.stopBtn);
 
         // create play button
         this.playBtn = document.createElement('button');
@@ -61,7 +65,7 @@ class snakeGame {
             this.playBtn.style.display = 'none';
             this.newGameBtn.style.display = 'none';
         })
-        document.body.firstChild.nextSibling.appendChild(this.playBtn);
+        divSetting.appendChild(this.playBtn);
 
         // create new game button
         this.newGameBtn = document.createElement('button');
@@ -74,8 +78,7 @@ class snakeGame {
             this.record = 0;
             this.reset();
         })
-        document.body.firstChild.nextSibling.appendChild(this.newGameBtn);
-    
+        divSetting.appendChild(this.newGameBtn);
 
         this.snake = new snake(this);
         this.food = new food(this);
@@ -93,7 +96,6 @@ class snakeGame {
     loop(){
         this.update();
         this.draw();
-        // this.timeOut = setTimeout(()=>this.loop(), 60)
         this.resume();
     }
 

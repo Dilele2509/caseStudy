@@ -22,13 +22,32 @@ body {
 }
 /* canvas box */
 
-.game{
+.game {
     position: relative;
+}
+
+.setting {
+    position: absolute;
+    width: 600px;
+    height: 600px;
 }
 
 canvas {
     border: 1px solid #000;
     background-color: #000;
+}
+
+button {
+    border: none;
+    padding: 8px;
+    font-size: 16px;
+    color: #fff;
+    background-color: transparent;
+}
+
+button:hover {
+    opacity: .7;
+    cursor: pointer;
 }
 
 .record,
@@ -46,26 +65,13 @@ canvas {
     top: 40px;
 }
 
-button {
-    border: none;
-    padding: 8px;
-    font-size: 16px;
-    color: #fff;
-    background-color: transparent;
-}
-
-button:hover {
-    opacity: .7;
-    cursor: pointer;
-}
-
 .newGameBtn,
 .btnReset {
     display: none;
     position: absolute;
     top: 330px;
-    left: 250px;
-    min-width: 100px;
+    left: 240px;
+    min-width: 120px;
     min-height: 30px;
     font-weight: 500;
     background-color: green;
