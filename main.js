@@ -1,6 +1,5 @@
 let divGame = document.querySelector('.game');
 let divSetting = document.querySelector('.setting');
-let setSnakeColor = document.querySelector('.snakeColor');
 
 class snakeGame {
 
